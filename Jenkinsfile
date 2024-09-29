@@ -1,5 +1,9 @@
 pipeline{
-  agent {docker 'hashicorp/terraform:latest'}
+  agent {
+    docker {image'hashicorp/terraform:latest'
+            label 'master'
+    }
+  }
 
   stages{
     stage('init'){
