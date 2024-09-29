@@ -1,5 +1,5 @@
 pipeline{
-  agent any
+  agent {docker 'hashicorp/terraform:latest'}
 
   stages{
     stage('init'){
