@@ -1,7 +1,11 @@
 pipeline{
-  agent {
-    docker 'hashicorp/terraform:latest'
-  }
+ agent {
+        docker {
+            image 'hashicorp/terraform:latest'
+            // Override the ENTRYPOINT
+            args '--entrypoint=""'
+        }
+    }
 
   stages{
     stage('init'){
